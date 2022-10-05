@@ -3,5 +3,25 @@
 @tailwind utilities;
 
 .btn {
-    @apply inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out
+    @apply inline-block px-6 py-2.5 bg-blue-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out
+}
+
+.bodyStyle {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500
+}
+.headerImage{
+    @apply mt-5 max-w-sm mx-auto
+}
+
+.card{
+    @apply mx-auto max-w-sm rounded shadow-lg px-5 py-5 my-5 bg-cyan-200
+}
+.header{
+    @apply mx-auto w-screen rounded shadow-lg px-5 py-5 bg-logoblue
+
+}
+
+.slider{
+    -webkit-appearance: none;
+    background: black;
 }

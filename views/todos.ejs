@@ -5,45 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Wellness Tracker</title>
-    <link rel="stylesheet" href="css/style-b.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-<body>
-    <h1>Your Personal Wellness Tracker</h1>
+
+<!-- Nav Bar -->
+<header class="header flex justify-between">
     <h2>Welcome, <%= user.userName %>!</h2>
-    <h3>My Journal Entries:</h3>
-    <div class="journal-entries">
-    <ul>
-        <% todos.forEach( el => { %>
-            <div class="journal-entry">
-                <li class='todoItem' data-id='<%=el._id%>'>
+    <img class="headerImage"src="logo.png" alt="WeRecover">
+    <a class="btn" href="/logout"><button>Logout</button></a>
+</header>
 
-                    <h3> <%= el.date.toDateString()%> </h3>
 
-                    <div><%= (el.exercise) ? 'Exercised today!' : 'No exercise today' %></div> <%/* .entry comes from our schema */%>
-                    
-                    <div><%= el.numOfDrinks > 0 ? `Drank ${el.numOfDrinks} alcoholic beverage(s) today.` : 'Drank no alcohol today!' %></div>
-                    
-                    <div><%=`I rate my mood at ${el.mood} point(s) out of 10.`%></div>
-                    
-                    <div>
-                        <h4>My Journal Entry:</h3>
-                        <span><%= el.entry %></span> <%/* .entry comes from our schema */%>
-                    </div>
-                    <span class='del'><i class="fa-regular fa-square-minus"></i></span>
-                </li>
-            </div>
-        <% }) %>    
-    </ul>
-    </div>
-    <!-- <h2><%= user.userName %> has <%= left %> journal entries.</h2> -->
-
+<body class="bodyStyle text-slate-700">
+    <h1>Your Personal Wellness Tracker</h1>
+    
     
 
     <h3>Create New Entry:</h3>
-    <div class="entry-fields"></div>
+    <div class="card">
         <form action="/todos/createTodo" method='POST'>
 
             <div>
@@ -64,7 +46,7 @@
             <div>
                 How positive was my mood?
                 <label for="mood">Mood:</label>
-                <input type="range" name="mood" id="mood" min="1" max="10" step="1" value="8">
+                <input class="slider" type="range" name="mood" id="mood" min="1" max="10" step="1" value="8">
                 <output class="mood-output" for="mood"></output>
             </div>
 
@@ -77,7 +59,38 @@
 
         </form>
     </div>
-    <a href="/logout"><button>Logout</button></a>
+    
+    <h3>My Journal Entries:</h3>
+    <div class="card">
+        <ul>
+            <% todos.forEach( el => { %>
+                <div class="journal-entry">
+                    <li class='todoItem' data-id='<%=el._id%>'>
+
+                        <h3> <%= el.date.toDateString()%> </h3>
+
+                        <div><%= (el.exercise) ? 'Exercised today!' : 'No exercise today' %></div> <%/* .entry comes from our schema */%>
+
+                        <div><%= el.numOfDrinks > 0 ? `Drank ${el.numOfDrinks} alcoholic beverage(s) today.` : 'Drank no alcohol today!' %></div>
+
+                        <div><%=`I rate my mood at ${el.mood} point(s) out of 10.`%></div>
+
+                        <div>
+                            <h4>My Journal Entry:</h3>
+                            <span><%= el.entry %></span> <%/* .entry comes from our schema */%>
+                        </div>
+                        <span class='del'><i class="fa-regular fa-square-minus"></i></span>
+                    </li>
+                </div>
+            <% }) %>    
+        </ul>
+    </div>
+    <!-- <h2><%= user.userName %> has <%= left %> journal entries.</h2> -->
+    
+
+
+
+    
 
     <script src="js/main.js"></script>
     

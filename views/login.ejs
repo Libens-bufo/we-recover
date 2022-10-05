@@ -5,15 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/index-style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-<body>
+
+<header>
+    <img class="headerImage"src="logo.png" alt="WeRecover">
+  </header>
+<body class="bodyStyle">
     <main>
-        <div class="container">
-            <h1>Welcome to the Wellness Tracker App</h1>
-            <h3>Please Login</h3>
+        <div class="card">
+            <h3 class="text-stone-700 flex justify-center items-center">Please log in.</h3>
             <% if (locals.messages.errors) { %>
                 <% messages.errors.forEach( el => { %>
                     <div class="alert alert-danger"><%= el.msg %></div>
@@ -24,10 +27,10 @@
                     <div class="alert alert-danger"><%= el.msg %></div>
                 <% }) %>    
             <% } %>
-            <form action="/login" method="POST">
-                <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <input type="submit" value="Log In">
+            <form class="flex flex-col items-center"action="/login" method="POST">
+                <input class="w-2/4 border-2 border-stone-500 my-1" type="email" name="email" placeholder="Email">
+                <input class="w-2/4 border-2 border-stone-500 my-1" type="password" name="password" placeholder="Password">
+                <input class="btn w-2/4 border-2 border-stone-500 my-1" type="submit" value="Log In">
             </form>
         </div>
     </main>
