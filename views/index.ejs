@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index-style.css" />
+    <title>WeRecover</title>
+    <link rel="stylesheet" href="css/style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -13,14 +13,22 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <main>
-      <div class="container">
-        <h1>Welcome to the Wellness Tracker App</h1>
+  <header>
+    <img class="mt-5 max-w-sm mx-auto"src="logo.png" alt="WeRecover">
+  </header>
+  <body class="bg-gradient-to-r from-cyan-500 to-blue-500">
+    <main class=" mx-auto grid items-center">
+      
+      <div class="mx-auto max-w-sm rounded shadow-lg px-5 py-5 my-5 bg-cyan-200">
         <h4 class="quote">"<%= quote %>"</h4>
         <h5 class="author">- <%= author %></h5>
-        <span>Please <a href="/login"> Login</a></span>
-        <span> or <a href="/signup">Create an Account</a></span>
+      </div>
+
+      
+      <div class="mx-auto max-w-sm rounded shadow-lg bg-cyan-200">        
+        <span class="center mx-5 px-5 py 2">
+        Please <a class=" underline" href="/login"> Login</a> or <a class="underline" href="/signup">Create an Account</a>
+        </span>
       </div>
     </main>
   </body>

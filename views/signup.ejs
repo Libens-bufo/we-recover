@@ -4,27 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/index-style.css">
+    <title>Sign Up | WeRecover</title>
+    <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
-<body>
+
+<header>
+    <img class="mt-5 max-w-sm mx-auto" src="logo.png" alt="WeRecover">
+  </header>
+
+<body class="bg-gradient-to-r from-cyan-500 to-blue-500">
     <main>
-        <div class="container">
-            <h1>Welcome to the Wellness Tracker App</h1>
-            <h3>Create your free account</h3>
+
+        <div class="mx-auto max-w-sm rounded shadow-lg px-5 py-5 my-5 bg-cyan-200">
+            <h1 class="px-8 my-2">Create your free WeRecover account!</h1>
             <% if (locals.messages.errors) { %>
                 <% messages.errors.forEach( el => { %>
                     <div class="alert alert-danger"><%= el.msg %></div>
                 <% }) %>    
             <% } %>
-            <form action="/signup" method="POST">
-                <input type="text" name="userName" placeholder="User Name">
-                <input type="email" name="email" placeholder="Email">
-                <input type="password" name="password" placeholder="Password">
-                <input type="password" name="confirmPassword" placeholder="Confirm Password">
-                <input type="submit" value="Sign up">
+            <form class="flex flex-col items-center" action="/signup" method="POST">
+                <input class="w-2/4 border-2 border-stone-500 my-1" type="text" name="userName" placeholder="User Name">
+                <input class="w-2/4 border-2 border-stone-500 my-1" type="email" name="email" placeholder="Email">
+                <input class="w-2/4 border-2 border-stone-500 my-1" type="password" name="password" placeholder="Password">
+                <input class="w-2/4 border-2 border-stone-500 my-1" type="password" name="confirmPassword" placeholder="Confirm Password">
+                <input class="w-2/4 btn border-2 border-stone-500 my-1" type="submit" value="Sign up">
             </form>
         </div>
     </main>
