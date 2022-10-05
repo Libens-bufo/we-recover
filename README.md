@@ -19,7 +19,7 @@ This is intended for use by those looking to increase motivation and self-awaren
 
 ## Packages/Dependencies used
 
-bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, validator
+bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mongodb, mongoose, morgan, nodemon, passport, passport-local, tailwindcss, validator
 
 ---
 
