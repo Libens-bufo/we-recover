@@ -12,64 +12,77 @@
 </head>
 
 <!-- Nav Bar -->
-<header class="header flex justify-between">
+<header class="header h-20 flex justify-between py-0">
     <h2>Welcome, <%= user.userName %>!</h2>
-    <img class="headerImage"src="logo.png" alt="WeRecover">
+    <img class="lheaderImage "src="logo.png" alt="WeRecover">
     <a class="btn" href="/logout"><button>Logout</button></a>
 </header>
 
 
 <body class="bodyStyle text-slate-700">
-    <h1>Your Personal Wellness Tracker</h1>
+    
     
     
 
-    <h3>Create New Entry:</h3>
-    <div class="card">
+    <h3 class="flex justify-center items-center">Create New Entry:</h3>
+    <div class="cardEntry">
         <form action="/todos/createTodo" method='POST'>
 
-            <div>
+            <div class="flex flex-grow justify-around">
                 Did I exercise today?
-                <input type="radio" name="exercise" value='true' id="yesBox">
-                <label for="yesBox">Yes</label>
-                <input type="radio" name="exercise" value='false' id="noBox" checked>
-                <label for="noBox">No</label>
+                <div>
+                    <input type="radio" name="exercise" value='true' id="yesBox">
+                    <label for="yesBox">Yes</label>
+                </div>                     
+                <div>
+                    <input type="radio" name="exercise" value='false' id="noBox" checked>
+                    <label for="noBox">No</label> 
+                </div>
+            
             </div>
 
-            <div>
+            <div class="flex flex-grow justify-around">
                 How many drinks did I have?
-                <label for="drinks">Number of Drinks:</label>
-                <input type="range" name="numOfDrinks" id="drinks" min="0" max="10" step="1" value="0">
-                <output class="drinks-output" for="drinks"></output>
+                <div>
+                    <label for="drinks"></label>
+                    <input type="range" name="numOfDrinks" id="drinks" min="0" max="10" step="1" value="0">
+                    <output class="drinks-output" for="drinks"></output>
+                </div>
             </div>
 
-            <div>
+            <div class="flex flex-grow justify-around">
                 How positive was my mood?
-                <label for="mood">Mood:</label>
-                <input class="slider" type="range" name="mood" id="mood" min="1" max="10" step="1" value="8">
-                <output class="mood-output" for="mood"></output>
+                <div>
+                    <label for="mood"></label>
+                    <input class="slider" type="range" name="mood" id="mood" min="1" max="10" step="1" value="8">
+                    <output class="mood-output" for="mood"></output>
+                </div>
+
             </div>
 
             <div>
-                <label for="Journal Entry">Journal Entry:</label>
-                <textarea placeholder="Journal Entry" name='journalEntry' id="textboxid"></textarea>
+                <label for="Journal Entry"></label>
+                <textarea class="mw-fit w-full"placeholder="Journal Entry" name='journalEntry' id="textboxid"></textarea>
+            </div>
+            <div class="flex justify-center py-5">
+                <input class="btn flex justify-center items-center" type="submit" value="Add Entry" class="submit">
             </div>
 
-                <input type="submit" value="Add Entry" class="submit">
+             
 
         </form>
     </div>
     
-    <h3>My Journal Entries:</h3>
-    <div class="card">
+    <h3 class="flex justify-center items-center" >My Journal Entries:</h3>
+    <div class="cardEntry">
         <ul>
             <% todos.forEach( el => { %>
                 <div class="journal-entry">
                     <li class='todoItem' data-id='<%=el._id%>'>
 
-                        <h3> <%= el.date.toDateString()%> </h3>
+                        <h3 class="font-bold underline"> <%= el.date.toDateString()%> </h3>
 
-                        <div><%= (el.exercise) ? 'Exercised today!' : 'No exercise today' %></div> <%/* .entry comes from our schema */%>
+                        <div><%= (el.exercise) ? 'Exercised today!' : 'No exercise today.' %></div> <%/* .entry comes from our schema */%>
 
                         <div><%= el.numOfDrinks > 0 ? `Drank ${el.numOfDrinks} alcoholic beverage(s) today.` : 'Drank no alcohol today!' %></div>
 
@@ -79,7 +92,7 @@
                             <h4>My Journal Entry:</h3>
                             <span><%= el.entry %></span> <%/* .entry comes from our schema */%>
                         </div>
-                        <span class='del'><i class="fa-regular fa-square-minus"></i></span>
+                        <span class='del'><i class="fa-regular fa-trash-alt"></i></span>
                     </li>
                 </div>
             <% }) %>    
