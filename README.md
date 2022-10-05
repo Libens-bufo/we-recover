@@ -1,4 +1,5 @@
 WeRecover
+<img width="666px" src="screen1.png">
 ===
 
 ## Introduction
@@ -34,3 +35,6 @@ bcrypt, connect-mongo, dotenv, ejs, express, express-flash, express-session, mon
 ---
 
 ## Screenshots
+
+<img width="666px" src="screen2.png">
+<img width="666px" src="animation.gif">
