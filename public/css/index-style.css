@@ -1,0 +1,64 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.container {
+  text-align: center;
+  margin: 200px auto 0 auto;
+  max-width: 600px;
+  padding: 40px;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.92);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: rgb(36, 148, 88);
+}
+
+body {
+  background-image: url(./backgroundphotos/desert-rocks.jpg);
+  background-size: cover;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  width: 75%;
+}
+
+.quote {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 1.25em;
+  font-style: italic;
+  color: rgb(78, 78, 78);
+  margin-bottom: 0;
+}
+
+.author {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 0.9em;
+  font-style: italic;
+  margin-top: 5px;
+}
+
+@media screen and (max-width: 700px) {
+  .container {
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+}
